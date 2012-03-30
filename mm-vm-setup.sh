@@ -20,5 +20,5 @@ source <(curl -s https://raw.github.com/andywiens/dotfiles/master/installer)
 
 read -p "do you want to update the networking? (y/n): "
 if [[ "$REPLY" = "y" ]]; then
-	source <(curl -s https://raw.github.com/andywiens/vm-install/master/mm-vm-setup.sh)
+	source <(curl -s https://raw.github.com/andywiens/mm-devvm-setup/master/mm-vm-networking-setup.sh)
 fi

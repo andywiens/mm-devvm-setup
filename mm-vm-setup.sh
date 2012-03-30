@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 if [[ ! "root" = "$USER" ]]; then
-	sudo su
+	echo "Unfortunately, you need to run this as root!"
+	exit
 fi
 
 if [ ! `hash curl 2>&-` ]; then

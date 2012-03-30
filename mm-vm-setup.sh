@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
-if [[ ! "root" = "$USER" ]]; then
-	echo "Unfortunately, you need to run this as root!"
-	return
-fi
+# if [[ ! "root" = "$USER" ]]; then
+# 	echo "Unfortunately, you need to run this as root!"
+# 	return
+# fi
 
 if [ ! `hash curl 2>&-` ]; then
   echo "installing curl"
-  yum install curl
+  sudo yum install curl
 fi
 
 
 if [ ! `hash git 2>&-` ]; then
   echo "installing git"
-  yum install git-all.noarch
+  sudo yum install git-all.noarch
 fi
 
 # install the dotfiles from github

@@ -22,3 +22,10 @@ read -p "do you want to update the networking? (y/n): "
 if [[ "$REPLY" = "y" ]]; then
 	source <(curl -s https://raw.github.com/andywiens/mm-devvm-setup/master/mm-vm-networking-setup.sh)
 fi
+
+if [ ! `hash rvm 2>&-` ]; then
+	read -p "Do you want to install RVM (y/n)?: "
+	if [[ "$REPLY" = "y" ]]; then
+		bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+	fi
+fi

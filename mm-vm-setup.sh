@@ -2,7 +2,7 @@
 
 if [[ ! "root" = "$USER" ]]; then
 	echo "Unfortunately, you need to run this as root!"
-	exit
+	exit 10
 fi
 
 if [ ! `hash curl 2>&-` ]; then

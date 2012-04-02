@@ -23,6 +23,6 @@ fi
 if [[ ! `type rvm 2>/dev/null` ]]; then
 	read -p "Do you want to install RVM (y/n)?: "
 	if [[ "$REPLY" = "y" ]]; then
-		bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+        source <(curl -s https://raw.github.com/andywiens/mm-devvm-setup/master/mm-rvm-setup.sh)
 	fi
 fi

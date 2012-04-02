@@ -10,6 +10,10 @@ fi
 if [[ ! `type git 2>/dev/null` ]]; then
   echo "installing git"
   sudo yum -y install git-all.noarch
+  
+  git config --global user.name "Andy Wiens"
+  git config --global user.email "andy@mindsandmachines.com"
+  git config --global color.ui auto
 fi
 
 # install the dotfiles from github

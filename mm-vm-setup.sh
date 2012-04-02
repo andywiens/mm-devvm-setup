@@ -3,13 +3,13 @@
 
 if [[ ! `type curl 2>/dev/null` ]]; then
   echo "installing curl"
-  sudo yum install curl
+  sudo yum -y install curl
 fi
 
 
 if [[ ! `type git 2>/dev/null` ]]; then
   echo "installing git"
-  sudo yum install git-all.noarch
+  sudo yum -y install git-all.noarch
 fi
 
 # install the dotfiles from github

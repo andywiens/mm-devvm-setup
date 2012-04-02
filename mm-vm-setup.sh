@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 
-# if [[ ! "root" = "$USER" ]]; then
-# 	echo "Unfortunately, you need to run this as root!"
-# 	return
-# fi
 
-if [ ! `hash curl 2>&-` ]; then
+if [[ ! `type curl 2>/dev/null` ]]; then
   echo "installing curl"
   sudo yum install curl
 fi
 
 
-if [ ! `hash git 2>&-` ]; then
+if [[ ! `type git 2>/dev/null` ]]; then
   echo "installing git"
   sudo yum install git-all.noarch
 fi
@@ -24,7 +20,7 @@ if [[ "$REPLY" = "y" ]]; then
 	source <(curl -s https://raw.github.com/andywiens/mm-devvm-setup/master/mm-vm-networking-setup.sh)
 fi
 
-if [ ! `hash rvm 2>&-` ]; then
+if [[ ! `type rvm 2>/dev/null` ]]; then
 	read -p "Do you want to install RVM (y/n)?: "
 	if [[ "$REPLY" = "y" ]]; then
 		bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 log()  { printf "$*\n" ; return $? ;  }
 
-sudo rm /etc/udev/rules.d/70-persistent-net.rules
+if [[ -e /etc/udev/rules.d/70-persistent-net.rules ]]; then
+	sudo rm /etc/udev/rules.d/70-persistent-net.rules
+fi
 
 # ask user what the vm should be called
 read -p "What do you want this vm to be called?: " vmname
